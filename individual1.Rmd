@@ -1,0 +1,11 @@
+---
+title: "ds202_lab2"
+author: "Evan Mills"
+date: "February 5, 2019"
+output: html_document
+---
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
