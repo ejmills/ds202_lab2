@@ -1,5 +1,5 @@
 ---
-title: "ds202_lab2"
+title: "ds202_lab2_individual1"
 author: "Evan Mills"
 date: "February 5, 2019"
 output: html_document
@@ -8,4 +8,14 @@ output: html_document
 ```{r}
 choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
 head(choco)
+
+hist(choco$Rating, xlab = "Rating", main = "Frequency of Rating")
 ```
+
+As you can see in the histogram above the average rating is around a score of 3. There are a few outliers that were given a rating of a 1 and 1 that has a rating of a 5.
+
+```{r}
+plot(choco$Cocoa.Pct, choco$Rating, xlab = "% Cacao", ylab = "Rating", main = "Rating vs % Cacao")
+```
+
+As you can see in the graph above the rating does not depend on the percent of cocao in the bar. Therefore we can deduce that there is some other infulence that causes the rating to either go up or down.
