@@ -1,0 +1,29 @@
+---
+title: "individual2.Rmd"
+author: "Maxwell Farver"
+date: "February 8, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+```{r}
+library(ggplot2)
+ggplot(choco, aes(x=Rating)) + geom_histogram(binwidth = .1)
+ggplot(choco, aes(y=Rating)) + geom_boxplot()
+```
+
+The majority of the entries have a rating between 2.5 and 4 (inclusive). I decided to also make a boxplot to determine true outliers more easily. As you can see, there are a few outliers on the low end, with only a single one on the high end.
+
+```{r}
+library(tidyverse)
+ggplot(choco, aes(x=Rating, y=Cocoa.Pct)) + geom_point()
+```
+
+By plotting the data as a scatterplot with X=Rating and Y=Cocoa.Pct, you can see that there is no correlation between the two values.
