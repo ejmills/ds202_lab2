@@ -5,3 +5,24 @@ date: "February 5, 2019"
 output: html_document
 ---
 
+```{r}
+library(tidyverse)
+library(ggplot2)
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+1.)
+```{r}
+sum(!is.na(choco$Rating))
+```
+
+2.)
+```{r}
+ggplot(choco, aes(x=Review.Date)) + geom_bar(binwidth = 1)
+```
+
+3.)
+```{r}
+top_3 <- count(choco, "Company.Location")
+top_3
+```
