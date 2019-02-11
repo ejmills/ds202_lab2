@@ -19,3 +19,8 @@ plot(choco$Cocoa.Pct, choco$Rating, xlab = "% Cacao", ylab = "Rating", main = "R
 ```
 
 As you can see in the graph above the rating does not depend on the percent of cocao in the bar. Therefore we can deduce that there is some other infulence that causes the rating to either go up or down.
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+length(choco$Rating)
+```

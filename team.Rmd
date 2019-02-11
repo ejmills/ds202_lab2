@@ -1,6 +1,6 @@
 ---
 title: "ds202_lab2_team"
-author: "Evan Mills"
+author: "Evan Mills, Max Farver"
 date: "February 5, 2019"
 output: html_document
 ---
@@ -37,6 +37,12 @@ ggplot(data = top_3_data, aes(x=Company.Location, y=Rating)) +
 
 Ratings are fairly even across the company's locations, though the USA and France have a few errant low rating. The median of the ratings is nearly identical.
 
-```{r}
+4.)
+Is there a correlation between the review date and the rating?
 
+5.)
+```{r}
+plot(choco$Review.Date, choco$Rating, xlab="Review Date", ylab="Rating", main = "Rating vs Date")
 ```
+
+As you can tell from the graph above there is no correlation between the date that the chocolate bar was rated and the rating given.
