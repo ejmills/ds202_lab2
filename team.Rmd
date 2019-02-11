@@ -18,11 +18,25 @@ sum(!is.na(choco$Rating))
 
 2.)
 ```{r}
-ggplot(choco, aes(x=Review.Date)) + geom_bar(binwidth = 1)
+ggplot(choco, aes(x=Review.Date)) + geom_histogram(binwidth = 1)
 ```
 
 3.)
 ```{r}
-top_3 <- count(choco, "Company.Location")
+top_3 <- choco %>% 
+  group_by(Company.Location) %>%
+  tally(sort = TRUE)
+top_3 <- top_3 %>% top_n(3)
 top_3
+
+top_3_data <- filter(choco, Company.Location %in% c('U.S.A.', 'France', 'Canada'))
+
+ggplot(data = top_3_data, aes(x=Company.Location, y=Rating)) + 
+  geom_boxplot()
+```
+
+Ratings are fairly even across the company's locations, though the USA and France have a few errant low rating. The median of the ratings is nearly identical.
+
+```{r}
+
 ```
